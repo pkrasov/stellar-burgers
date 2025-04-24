@@ -24,13 +24,7 @@ const initialState: IBurgerState = {
   error: null
 };
 
-export const addOrder = createAsyncThunk(
-  'order/addOrder',
-  async (data: string[]) => {
-    const response = orderBurgerApi(data);
-    return response;
-  }
-);
+export const addOrder = createAsyncThunk('order/addOrder', orderBurgerApi);
 
 const burgerSlice = createSlice({
   name: 'burger',
